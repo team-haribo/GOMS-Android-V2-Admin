@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -54,19 +56,53 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":di"))
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.0")
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation(Dependency.AndroidX.APP_COMPAT)
+    implementation(Dependency.AndroidX.CORE_KTX)
+    implementation(Dependency.AndroidX.FRAGMENT_KTX)
+    implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
+    implementation(Dependency.AndroidX.LIFECYCLE_VIEWMODEL_KTX)
+    implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME)
+    implementation(Dependency.AndroidX.RECYCLER_VIEW)
+    implementation(Dependency.AndroidX.VIEWPAGER_2)
+
+    implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
+
+    implementation(Dependency.Kakao.KAKAO_SDK)
+
+    implementation(Dependency.AndroidX.ROOM_KTX)
+    kapt(Dependency.AndroidX.ROOM_COMPILER)
+
+    implementation(Dependency.Kotlin.COROUTINES_CORE)
+    implementation(Dependency.Kotlin.COROUTINES_ANDROID)
+
+    implementation(Dependency.Google.MATERIAL)
+    implementation(Dependency.Google.HILT_ANDROID)
+    kapt(Dependency.Google.HILT_ANDROID_COMPILER)
+
+    implementation(Dependency.Libraries.RETROFIT)
+    implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
+    implementation(Dependency.Libraries.OKHTTP)
+    implementation(Dependency.Libraries.OKHTTP_LOGGING_INTERCEPTOR)
+    implementation(Dependency.Libraries.MOSHI)
+    kapt(Dependency.Libraries.MOSHI_COMPILER)
+
+    testImplementation(Dependency.UnitTest.JUNIT)
+    testImplementation(Dependency.UnitTest.MOCKITO)
+
+    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+
+    implementation(Dependency.BottomNav.NAV_FRAGMENT)
+    implementation(Dependency.BottomNav.NAV_UI)
+
+    implementation(Dependency.Rx.RX_BINDING)
+    implementation(Dependency.Rx.RX_JAVA)
+    implementation(Dependency.Rx.RX_ANDROID)
+
+    implementation(Dependency.ImageLoad.GLIDE)
+    implementation(Dependency.ImageLoad.COIL)
+
+    implementation(Dependency.Libraries.SHIMMER)
+
+    implementation(Dependency.Lottie.LOTTIE)
 }
