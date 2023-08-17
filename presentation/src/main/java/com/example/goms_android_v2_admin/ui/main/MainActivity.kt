@@ -1,4 +1,4 @@
-package com.example.goms_android_v2_admin
+package com.example.goms_android_v2_admin.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

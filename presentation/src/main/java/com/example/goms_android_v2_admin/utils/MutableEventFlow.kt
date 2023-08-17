@@ -1,9 +1,10 @@
-package com.goms.presentaiton.utils
+package com.example.goms_android_v2_admin.utils
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.MutableSharedFlow
 import java.util.concurrent.atomic.AtomicBoolean
+
 
 interface EventFlow<out T>: Flow<T> {
     companion object {

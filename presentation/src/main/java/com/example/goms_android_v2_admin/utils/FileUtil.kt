@@ -1,14 +1,12 @@
-package com.goms.presentaiton.utils
+package com.example.goms_android_v2_admin.utils
 
 import android.content.Context
 import android.net.Uri
 import android.os.Environment
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import java.io.FileOutputStream
 import java.net.URLDecoder
+
 
 fun Uri.toFile(context: Context): File {
     val fileName = getFileName(context)
@@ -17,13 +15,6 @@ fun Uri.toFile(context: Context): File {
 
     return File(file.absolutePath)
 }
-
-fun File.toMultipartBody(): MultipartBody.Part =
-    MultipartBody.Part.createFormData(
-        name = "profile",
-        filename = this.name,
-        body = this.asRequestBody("image/*".toMediaType())
-    )
 
 private fun Uri.getFileName(context: Context): String {
     val name = URLDecoder.decode(toString().split("/").last(), Charsets.UTF_8.name())

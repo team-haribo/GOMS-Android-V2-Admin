@@ -1,8 +1,9 @@
-package com.goms.presentaiton.utils
+package com.example.goms_android_v2_admin.utils
 
-sealed class Event(
 
+sealed class Event (
 ) {
+
     object Loading: Event()
 
     /**
