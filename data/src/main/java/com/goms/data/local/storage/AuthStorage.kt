@@ -7,4 +7,10 @@ interface AuthStorage {
     fun setRefreshToken(refresh: String?)
     fun getRefreshToken(): String?
 
+    fun getAccessTokenExpiredAt(): String?
+    fun setAccessTokenExpiredAt(expiredAt: String?)
+
+    fun getRefreshTokenExpiredAt(): String?
+    fun setRefreshTokenExpiredAt(expiredAt: String?)
+
 }
