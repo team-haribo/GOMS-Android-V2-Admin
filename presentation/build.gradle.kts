@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.example.goms_android_v2_admin"
-    compileSdk = 33
+    compileSdk = Versions.COMPILE_SDK_VERSION
 
     defaultConfig {
         applicationId = "com.example.goms_android_v2_admin"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = Versions.MIN_SDK_VERSION
+        targetSdk = Versions.TARGET_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
 
@@ -32,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Versions.JAVA_VERSION
+        targetCompatibility = Versions.JAVA_VERSION
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Versions.JAVA_VERSION.toString()
     }
     buildFeatures {
         compose = true
