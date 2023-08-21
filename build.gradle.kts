@@ -16,6 +16,7 @@ buildscript {
 
 plugins {
     id(Dependency.GradlePlugin.GRADLE_KTLINT) version Versions.KTLINT_PLUGIN
+    id(Dependency.GradlePlugin.ANDROID_APPLICATION) version Versions.GRADLE_ANDROID apply false
 }
 
 tasks.register("clean", Delete::class) {

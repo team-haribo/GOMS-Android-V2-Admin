@@ -2,6 +2,7 @@ import javax.inject.Inject
 
 object Dependency {
     object GradlePlugin {
+        const val ANDROID_APPLICATION = "com.android.application"
         const val GRADLE_ANDROID = "com.android.tools.build:gradle:${Versions.GRADLE_ANDROID}"
         const val GRADLE_KOTLIN =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.GRADLE_KOTLIN}"
