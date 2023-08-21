@@ -1,17 +1,17 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-  //  id("dagger.hilt.android.plugin")
     id("kotlin-parcelize")
     kotlin("kapt")
 }
 
 android {
     namespace = "com.goms.data"
-    compileSdk = 33
+    compileSdk = Versions.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk = 24
+        minSdk = Versions.MIN_SDK_VERSION
+        targetSdk = Versions.TARGET_SDK_VERSION
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -27,11 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Versions.JAVA_VERSION
+        targetCompatibility = Versions.JAVA_VERSION
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Versions.JAVA_VERSION.toString()
     }
 }
 
@@ -41,7 +41,7 @@ dependencies {
     implementation(Dependency.JavaX.INJECT)
 
     implementation(Dependency.AndroidX.ROOM_KTX)
-    //kapt(Dependency.AndroidX.ROOM_COMPILER)
+    kapt(Dependency.AndroidX.ROOM_COMPILER)
 
     implementation(Dependency.Libraries.RETROFIT)
     implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
