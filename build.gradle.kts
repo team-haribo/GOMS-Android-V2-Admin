@@ -1,5 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+
     repositories {
         google()
         mavenCentral()
@@ -10,7 +11,6 @@ buildscript {
         classpath(Dependency.GradlePlugin.GRADLE_KOTLIN)
         classpath(Dependency.GradlePlugin.GRADLE_HILT)
         classpath(Dependency.Google.GMS_GOOGLE_SERVICE)
-        classpath(Dependency.GiuhubLogin.GITHUB_API)
     }
 }
 
