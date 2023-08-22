@@ -33,3 +33,11 @@ android {
         jvmTarget = Versions.JAVA_VERSION.toString()
     }
 }
+
+dependencies {
+    implementation(Dependency.JavaX.INJECT)
+
+    implementation(Dependency.Kotlin.COROUTINES_CORE)
+
+    implementation(Dependency.AndroidX.PAGING)
+}

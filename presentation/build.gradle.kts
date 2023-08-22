@@ -66,6 +66,14 @@ dependencies {
     implementation(Dependency.AndroidX.RECYCLER_VIEW)
     implementation(Dependency.AndroidX.VIEWPAGER_2)
 
+    implementation(Dependency.Compose.ACTIVITY)
+    implementation(Dependency.Compose.UI)
+    implementation(Dependency.Compose.VIEW_BINDING)
+    implementation(Dependency.Compose.PREVIEW)
+    implementation(Dependency.Compose.MATERIAL)
+    implementation(Dependency.Compose.COMPOSE_HILT_NAV)
+    implementation(Dependency.Compose.MATERIAL3)
+
     implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
 
 
