@@ -60,6 +60,7 @@ object Dependency {
         const val COMPOSE_HILT_NAV = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAV}"
         const val FOUNDATION = "androidx.compose.foundation:foundation:${Versions.COMPOSE}"
     }
+
     object Google {
         const val FIREBASE_ANALYTICS = "com.google.firebase:firebase-analytics-ktx"
         const val FIREBASE_BOM = "com.google.firebase:firebase-bom:${Versions.FIREBASE_BOM}"
@@ -93,8 +94,10 @@ object Dependency {
 
     object UnitTest {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
-        const val MOCKITO = "org.mockito:mockito-core:${Versions.MOCKITO}"
+        const val MOCKITO_KOTLIN = "org.mockito.kotlin:mockito-kotlin:${Versions.MOCKITO_KOTLIN}"
+        const val MOCKITO_INLINE = "org.mockito:mockito-inline:${Versions.MOCKITO_KOTLIN}"
     }
+
 
     object AndroidTest {
         const val ANDROID_JUNIT = "androidx.test.ext:junit:${Versions.ANDROID_JUNIT}"

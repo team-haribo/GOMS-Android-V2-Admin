@@ -52,10 +52,10 @@ object Versions {
         const val OKHTTP = "4.9.3"
 
         const val JUNIT = "4.13.2"
-        const val MOCKITO = "4.2.0"
         const val ANDROID_JUNIT = "1.1.2"
         const val ESPRESSO_CORE = "3.5.1"
-
+        const val MOCKITO_INLINE = "5.1.1"
+        const val MOCKITO_KOTLIN = "4.1.0"
         const val NAV = "2.3.5"
 
         const val RX_BINDING = "4.0.0"
