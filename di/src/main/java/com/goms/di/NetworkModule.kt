@@ -1,13 +1,18 @@
 package com.goms.di
 
 import android.util.Log
+import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+@Module
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     @Provides
@@ -33,7 +38,7 @@ object NetworkModule {
         gsonConverterFactory: GsonConverterFactory,
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl("")
             .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()

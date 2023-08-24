@@ -2,9 +2,9 @@ import org.gradle.api.JavaVersion
 
 object Versions {
         const val GRADLE_ANDROID = "7.4.2"
-        const val GRADLE_KOTLIN = "1.7.21"
+        const val GRADLE_KOTLIN = "1.8.10"
 
-        val JAVA_VERSION = JavaVersion.VERSION_1_8
+        val JAVA_VERSION = JavaVersion.VERSION_17
         const val KOTLINX_COROUTINES = "1.6.0"
 
         const val GITHUB_API = "8.1.0"
@@ -22,11 +22,19 @@ object Versions {
         const val ACTIVITY_KTX = "1.2.3"
         const val FRAGMENT_KTX = "1.5.5"
         const val LIFECYCLE_KTX = "2.3.1"
+        const val PAGING = "3.1.1"
+        const val PAGING_COMPOSE = "1.0.0-alpha16"
         const val ROOM = "2.3.0"
         const val LEGACY = "1.0.0"
         const val RECYCLERVIEW = "1.1.0"
         const val PREFERENCE_KTX = "1.2.0"
         const val VIEWPAGER_2 = "1.0.0"
+
+        const val COMPOSE_ACTIVITY = "1.6.1"
+        const val COMPOSE = "1.4.3"
+        const val COMPOSE_MATERIAL = "1.3.1"
+        const val COMPOSE_MATERIAL3 = "1.0.1"
+        const val HILT_NAV = "1.0.0"
 
         const val HILT = "2.45"
         const val MATERIAL = "1.3.0"
@@ -44,10 +52,10 @@ object Versions {
         const val OKHTTP = "4.9.3"
 
         const val JUNIT = "4.13.2"
-        const val MOCKITO = "4.2.0"
         const val ANDROID_JUNIT = "1.1.2"
         const val ESPRESSO_CORE = "3.5.1"
-
+        const val MOCKITO_INLINE = "5.1.1"
+        const val MOCKITO_KOTLIN = "4.1.0"
         const val NAV = "2.3.5"
 
         const val RX_BINDING = "4.0.0"

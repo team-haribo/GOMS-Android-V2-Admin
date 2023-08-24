@@ -27,16 +27,16 @@ class AuthStorageImpl @Inject constructor(
         sharedPreferences.getString(ACCESS_TOKEN_EXPIRED_AT, "")
 
 
-    override fun setAccessTokenExpiredAt(expiredAt: String?) =
-        setData(ACCESS_TOKEN_EXPIRED_AT, expiredAt)
+    override fun setAccessTokenExpiredAt(accessTokenExpiredAt: String?) =
+        setData(ACCESS_TOKEN_EXPIRED_AT, accessTokenExpiredAt)
 
 
     override fun getRefreshTokenExpiredAt(): String? =
         sharedPreferences.getString(REFRESH_TOKEN_EXPIRED_AT, "")
 
 
-    override fun setRefreshTokenExpiredAt(expiredAt: String?) =
-        setData(REFRESH_TOKEN_EXPIRED_AT, expiredAt)
+    override fun setRefreshTokenExpiredAt(refreshTokenExpiredAt: String?) =
+        setData(REFRESH_TOKEN_EXPIRED_AT, refreshTokenExpiredAt)
 
 
 

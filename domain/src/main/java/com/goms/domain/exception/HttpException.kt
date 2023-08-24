@@ -69,8 +69,6 @@ class ConflictException(
 class ServerException(
     override val message: String?
 ) : RuntimeException()
-
-
 /**
  * 예상하지 못한 에러가 발생하는 경우
  */

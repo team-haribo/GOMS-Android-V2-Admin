@@ -39,6 +39,7 @@ android {
         jvmTarget = Versions.JAVA_VERSION.toString()
     }
     buildFeatures {
+        viewBinding = true
         compose = true
     }
     composeOptions {
@@ -65,6 +66,14 @@ dependencies {
     implementation(Dependency.AndroidX.RECYCLER_VIEW)
     implementation(Dependency.AndroidX.VIEWPAGER_2)
 
+    implementation(Dependency.Compose.ACTIVITY)
+    implementation(Dependency.Compose.UI)
+    implementation(Dependency.Compose.VIEW_BINDING)
+    implementation(Dependency.Compose.PREVIEW)
+    implementation(Dependency.Compose.MATERIAL)
+    implementation(Dependency.Compose.COMPOSE_HILT_NAV)
+    implementation(Dependency.Compose.MATERIAL3)
+
     implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
 
 
@@ -86,7 +95,7 @@ dependencies {
     kapt(Dependency.Libraries.MOSHI_COMPILER)
 
     testImplementation(Dependency.UnitTest.JUNIT)
-    testImplementation(Dependency.UnitTest.MOCKITO)
+    testImplementation(Dependency.UnitTest.MOCKITO_KOTLIN)
 
     androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)

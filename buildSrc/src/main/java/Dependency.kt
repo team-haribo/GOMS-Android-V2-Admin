@@ -2,6 +2,7 @@ import javax.inject.Inject
 
 object Dependency {
     object GradlePlugin {
+        const val ANDROID_APPLICATION = "com.android.application"
         const val GRADLE_ANDROID = "com.android.tools.build:gradle:${Versions.GRADLE_ANDROID}"
         const val GRADLE_KOTLIN =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.GRADLE_KOTLIN}"
@@ -44,6 +45,20 @@ object Dependency {
         const val PREFERENCE_KTX = "androidx.preference:preference-ktx:${Versions.PREFERENCE_KTX}"
 
         const val VIEWPAGER_2 = "androidx.viewpager2:viewpager2:${Versions.VIEWPAGER_2}"
+
+        const val PAGING = "androidx.paging:paging-runtime:${Versions.PAGING}"
+        const val PAGING_COMPOSE = "androidx.paging:paging-compose:${Versions.PAGING_COMPOSE}"
+    }
+
+    object Compose {
+        const val ACTIVITY = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY}"
+        const val UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+        const val VIEW_BINDING = "androidx.compose.ui:ui-viewbinding:${Versions.COMPOSE}"
+        const val PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+        const val MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE_MATERIAL}"
+        const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
+        const val COMPOSE_HILT_NAV = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAV}"
+        const val FOUNDATION = "androidx.compose.foundation:foundation:${Versions.COMPOSE}"
     }
 
     object Google {
@@ -79,8 +94,10 @@ object Dependency {
 
     object UnitTest {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
-        const val MOCKITO = "org.mockito:mockito-core:${Versions.MOCKITO}"
+        const val MOCKITO_KOTLIN = "org.mockito.kotlin:mockito-kotlin:${Versions.MOCKITO_KOTLIN}"
+        const val MOCKITO_INLINE = "org.mockito:mockito-inline:${Versions.MOCKITO_KOTLIN}"
     }
+
 
     object AndroidTest {
         const val ANDROID_JUNIT = "androidx.test.ext:junit:${Versions.ANDROID_JUNIT}"
