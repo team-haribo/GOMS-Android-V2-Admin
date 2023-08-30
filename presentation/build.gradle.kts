@@ -7,13 +7,13 @@ plugins {
 
 android {
     namespace = "com.example.goms_android_v2_admin"
-    compileSdk = Versions.COMPILE_SDK_VERSION
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.goms_android_v2_admin"
-        minSdk = Versions.MIN_SDK_VERSION
-        targetSdk = Versions.TARGET_SDK_VERSION
-        versionCode = 1
+        minSdk = 26
+        targetSdk = 33
+        versionCode = 5
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -57,60 +57,67 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":di"))
 
+    // gauth
+    implementation(Dependency.Libraries.GAUTH)
+    // code scanner
+    implementation(Dependency.Libraries.CODE_SCANNER)
+    // permission
+    implementation(Dependency.Libraries.TEDPERMMISION)
+    // circle image
+    implementation(Dependency.Libraries.CIRCLE_IMAGEVIEW)
+    // zxing
+    implementation(Dependency.Libraries.ZXING)
+
+    // lifecycle
+    implementation(Dependency.LifeCycle.LIFECYCLE)
+    implementation(Dependency.LifeCycle.LIFECYCLE_LIVEDATA)
+    implementation(Dependency.LifeCycle.LIFECYCLE_RUNTIME)
+    implementation(Dependency.LifeCycle.LIFECYCLE_VIEWMODEL_KTX)
+
+    // hilt
+    implementation(Dependency.Hilt.HILT_ANDROID)
+    kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
+
+    // coil
+    implementation(Dependency.Coil.COIL_COMPOSE)
+    implementation(Dependency.Coil.COIL_VIEW)
+
+    // retrofit
+    implementation(Dependency.Retrofit.RETROFIT_KT)
+    implementation(Dependency.Retrofit.RETROFIT_GSON_CONVERTER)
+    implementation(Dependency.Retrofit.OKHTTP)
+    implementation(Dependency.Retrofit.OKHTTP_LOGGING_INTERCEPTOR)
+
+    // compose
+    implementation(Dependency.Compose.ACTIVITY_COMPOSE)
+    implementation(Dependency.Compose.COMPOSE)
+    implementation(Dependency.Compose.COMPOSE_TOOLING_PREVIEW)
+    implementation(Dependency.Compose.COMPOSE_MATERIAL)
+    implementation(Dependency.Compose.COMPOSE_LIVEDATA)
+    implementation(Dependency.Compose.COMPOSE_NAV)
+    implementation(Dependency.Compose.COMPOSE_ICON)
+    implementation(Dependency.Compose.COMPOSE_PAGER)
+    implementation(Dependency.Compose.PAGER_INDICATORS)
+    debugImplementation(Dependency.Compose.COMPOSE_TOOLING)
+    debugImplementation(Dependency.Compose.COMPOSE_MANIFEST)
+    testImplementation(Dependency.ComposeTest.COMPOSE_JUNIT)
+
+    // navigation
+    implementation(Dependency.AndroidX.NAVIGATION_FRAGMENT)
+    implementation(Dependency.AndroidX.NAVIGATION_UI_KTX)
+
+    implementation(Dependency.AndroidX.KOTLIN_CORE)
     implementation(Dependency.AndroidX.APP_COMPAT)
-    implementation(Dependency.AndroidX.CORE_KTX)
-    implementation(Dependency.AndroidX.FRAGMENT_KTX)
+    implementation(Dependency.AndroidX.ACTIVITY_KTX)
     implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
-    implementation(Dependency.AndroidX.LIFECYCLE_VIEWMODEL_KTX)
-    implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME)
-    implementation(Dependency.AndroidX.RECYCLER_VIEW)
-    implementation(Dependency.AndroidX.VIEWPAGER_2)
-
-    implementation(Dependency.Compose.ACTIVITY)
-    implementation(Dependency.Compose.UI)
-    implementation(Dependency.Compose.VIEW_BINDING)
-    implementation(Dependency.Compose.PREVIEW)
-    implementation(Dependency.Compose.MATERIAL)
-    implementation(Dependency.Compose.COMPOSE_HILT_NAV)
-    implementation(Dependency.Compose.MATERIAL3)
-
-    implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
-
-
-    implementation(Dependency.AndroidX.ROOM_KTX)
-    kapt(Dependency.AndroidX.ROOM_COMPILER)
-
-    implementation(Dependency.Kotlin.COROUTINES_CORE)
-    implementation(Dependency.Kotlin.COROUTINES_ANDROID)
-
     implementation(Dependency.Google.MATERIAL)
-    implementation(Dependency.Google.HILT_ANDROID)
-    kapt(Dependency.Google.HILT_ANDROID_COMPILER)
+    testImplementation(Dependency.Test.JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.TEST_JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO)
 
-    implementation(Dependency.Libraries.RETROFIT)
-    implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
-    implementation(Dependency.Libraries.OKHTTP)
-    implementation(Dependency.Libraries.OKHTTP_LOGGING_INTERCEPTOR)
-    implementation(Dependency.Libraries.MOSHI)
-    kapt(Dependency.Libraries.MOSHI_COMPILER)
+    implementation(Dependency.AndroidX.SWIPE_REFRESH_LAYOUT)
+    implementation(Dependency.Libraries.SWIPE_REFRESH)
 
-    testImplementation(Dependency.UnitTest.JUNIT)
-    testImplementation(Dependency.UnitTest.MOCKITO_KOTLIN)
-
-    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
-
-    implementation(Dependency.BottomNav.NAV_FRAGMENT)
-    implementation(Dependency.BottomNav.NAV_UI)
-
-    implementation(Dependency.Rx.RX_BINDING)
-    implementation(Dependency.Rx.RX_JAVA)
-    implementation(Dependency.Rx.RX_ANDROID)
-
-    implementation(Dependency.ImageLoad.GLIDE)
-    implementation(Dependency.ImageLoad.COIL)
-
-    implementation(Dependency.Libraries.SHIMMER)
-
-    implementation(Dependency.Lottie.LOTTIE)
+    implementation(platform(Dependency.Google.FIREBASE_BOM))
+    implementation(Dependency.Google.FIREBASE_ANALYTICS)
 }

@@ -9,11 +9,11 @@ plugins {
 
 android {
     namespace = "com.goms.di"
-    compileSdk = Versions.COMPILE_SDK_VERSION
+    compileSdk = 33
 
     defaultConfig {
-        minSdk = Versions.MIN_SDK_VERSION
-        targetSdk = Versions.TARGET_SDK_VERSION
+        minSdk = 26
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -27,6 +27,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = Versions.JAVA_VERSION
@@ -45,20 +49,20 @@ dependencies {
     implementation(Dependency.AndroidX.APP_COMPAT)
     implementation(Dependency.AndroidX.PREFERENCE_KTX)
 
-    implementation(Dependency.Google.HILT_ANDROID)
-    kapt(Dependency.Google.HILT_ANDROID_COMPILER)
+    implementation(Dependency.Hilt.HILT_ANDROID)
+    kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
 
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 
-    implementation(Dependency.Libraries.RETROFIT)
-    implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
-    implementation(Dependency.Libraries.OKHTTP)
-    implementation(Dependency.Libraries.OKHTTP_LOGGING_INTERCEPTOR)
+    implementation(Dependency.Retrofit.RETROFIT_KT)
+    implementation(Dependency.Retrofit.RETROFIT_GSON_CONVERTER)
+    implementation(Dependency.Retrofit.OKHTTP)
+    implementation(Dependency.Retrofit.OKHTTP_LOGGING_INTERCEPTOR)
 
-    testImplementation(Dependency.UnitTest.JUNIT)
-    testImplementation(Dependency.UnitTest.MOCKITO_KOTLIN)
+    testImplementation(Dependency.Test.JUNIT)
+    testImplementation(Dependency.UnitTest.MOCKITO)
 
     androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO)
 }
