@@ -13,9 +13,9 @@ buildscript {
 }
 
 plugins {
-    id(Dependency.GradlePlugins.ANDROID_APPLICATION) version Versions.Android apply false
-    id(Dependency.GradlePlugins.ANDROID_LIBRARY) version Versions.Android apply false
-    id(Dependency.GradlePlugins.KOTLIN_ANDROID) version Versions.AndroidKotlin apply false
+    id(Dependency.GradlePlugins.ANDROID_APPLICATION) version Versions.ANDROID apply false
+    id(Dependency.GradlePlugins.ANDROID_LIBRARY) version Versions.ANDROID apply false
+    id(Dependency.GradlePlugins.KOTLIN_ANDROID) version Versions.ANDROID_KOTLIN apply false
 }
 
 tasks.register("clean", Delete::class) {
