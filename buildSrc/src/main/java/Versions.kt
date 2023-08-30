@@ -4,19 +4,22 @@ object Versions {
         val JAVA_VERSION = JavaVersion.VERSION_17
 
         const val Android = "7.4.2"
-        const val AndroidKotlin = "1.7.0"
+        const val AndroidKotlin = "1.8.10"
         const val GRADLE_GOOGLE = "4.3.15"
         const val CORE_KTX = "1.5.0"
         const val PREFERENCE_KTX = "1.2.0"
         const val ROOM = "2.3.0"
-        const val Kotlin = "1.9.0"
         const val Appcompat = "1.6.1"
         const val Constraint = "2.1.4"
         const val ActivityKtx = "1.2.3"
         const val Navigation = "2.5.3"
         const val SwipeRefreshLayout = "1.1.0"
 
-        const val Material = "1.8.0"
+        const val COMPOSE_MATERIAL = "1.3.1"
+        const val COMPOSE_MATERIAL3 = "1.0.1"
+
+        const val PAGING = "3.1.1"
+        const val PAGING_COMPOSE = "1.0.0-alpha16"
 
         const val Junit = "4.13.2"
         const val MOCKITO = "4.2.0"
@@ -28,7 +31,7 @@ object Versions {
         const val CoilView = "2.2.2"
 
         const val ActivityCompose = "1.3.1"
-        const val Compose = "1.2.0"
+        const val Compose = "1.4.3"
         const val ComposeNav = "2.5.1"
         const val ComposePager = "0.20.1"
 
@@ -49,4 +52,8 @@ object Versions {
         const val LifecycleRuntime = "2.5.1"
 
         const val FIREBASE_BOM = "32.0.0"
+
+        const val INJECT = "1"
+
+        const val KOTLINX_COROUTINES = "1.6.4"
 }

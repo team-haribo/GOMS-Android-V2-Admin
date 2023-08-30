@@ -48,9 +48,10 @@ dependencies {
     implementation(Dependency.Hilt.HILT_ANDROID)
     kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
 
-    implementation(Dependency.AndroidX.KOTLIN_CORE)
+    implementation(Dependency.AndroidX.CORE_KTX)
     implementation(Dependency.AndroidX.APP_COMPAT)
-    implementation(Dependency.Google.MATERIAL)
+    implementation(Dependency.Compose.MATERIAL)
+    implementation(Dependency.Compose.MATERIAL3)
     implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
     testImplementation(Dependency.Test.JUNIT)
     androidTestImplementation(Dependency.AndroidTest.TEST_JUNIT)

@@ -9,9 +9,9 @@ object Dependency {
     }
 
     object AndroidX {
+        const val PAGING = "androidx.paging:paging-runtime:${Versions.PAGING}"
         const val PREFERENCE_KTX = "androidx.preference:preference-ktx:${Versions.PREFERENCE_KTX}"
         const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
-        const val KOTLIN_CORE = "androidx.core:core-ktx:${Versions.Kotlin}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.Appcompat}"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.Constraint}"
         const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Versions.ActivityKtx}"
@@ -27,7 +27,8 @@ object Dependency {
         const val ACTIVITY_COMPOSE = "androidx.activity:activity-compose:${Versions.ActivityCompose}"
         const val COMPOSE = "androidx.compose.ui:ui:${Versions.Compose}"
         const val COMPOSE_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.Compose}"
-        const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.Compose}"
+        const val MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE_MATERIAL}"
+        const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
         const val COMPOSE_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.Compose}"
         const val COMPOSE_MANIFEST = "androidx.compose.ui:ui-test-manifest:${Versions.Compose}"
         const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.Compose}"
@@ -70,8 +71,8 @@ object Dependency {
         const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Lifecycle}"
     }
 
+
     object Google {
-        const val MATERIAL = "com.google.android.material:material:${Versions.Material}"
         const val FIREBASE_BOM = "com.google.firebase:firebase-bom:${Versions.FIREBASE_BOM}"
         const val FIREBASE_ANALYTICS = "com.google.firebase:firebase-analytics-ktx"
     }
@@ -93,5 +94,14 @@ object Dependency {
     object Coil {
         const val COIL_COMPOSE = "com.github.skydoves:landscapist-coil:${Versions.CoilCompose}"
         const val COIL_VIEW = "io.coil-kt:coil:${Versions.CoilView}"
+    }
+
+    object JavaX {
+        const val INJECT = "javax.inject:javax.inject:${Versions.INJECT}"
+    }
+
+    object Kotlin {
+        const val COROUTINES_CORE =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KOTLINX_COROUTINES}"
     }
 }
