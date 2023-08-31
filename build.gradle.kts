@@ -16,6 +16,7 @@ plugins {
     id(Dependency.GradlePlugins.ANDROID_APPLICATION) version Versions.ANDROID apply false
     id(Dependency.GradlePlugins.ANDROID_LIBRARY) version Versions.ANDROID apply false
     id(Dependency.GradlePlugins.KOTLIN_ANDROID) version Versions.ANDROID_KOTLIN apply false
+    id(Dependency.GradlePlugins.GRADLE_KTLINT) version Versions.GRADLE_KTLINT
 }
 
 tasks.register("clean", Delete::class) {

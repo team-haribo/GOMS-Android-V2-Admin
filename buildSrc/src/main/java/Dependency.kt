@@ -6,6 +6,7 @@ object Dependency {
         const val ANDROID_LIBRARY = "com.android.library"
         const val KOTLIN_ANDROID = "org.jetbrains.kotlin.android"
         const val GOOGLE_PLUGIN = "com.google.gms:google-services:${Versions.GRADLE_GOOGLE}"
+        const val GRADLE_KTLINT = "org.jlleitschuh.gradle.ktlint"
     }
 
     object AndroidX {
