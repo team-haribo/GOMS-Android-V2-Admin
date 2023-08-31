@@ -7,18 +7,16 @@ buildscript {
     }
 
     dependencies {
-        classpath(Dependency.GradlePlugin.GRADLE_ANDROID)
-        classpath(Dependency.GradlePlugin.GRADLE_KOTLIN)
-        classpath(Dependency.GradlePlugin.GRADLE_HILT)
-        classpath(Dependency.Google.GMS_GOOGLE_SERVICE)
+        classpath(Dependency.Hilt.HILT_ANDROID_GRADLE)
+        classpath(Dependency.GradlePlugins.GOOGLE_PLUGIN)
     }
 }
 
 plugins {
-    id(Dependency.GradlePlugin.GRADLE_KTLINT) version Versions.KTLINT_PLUGIN
-    id(Dependency.GradlePlugin.ANDROID_APPLICATION) version Versions.GRADLE_ANDROID apply false
-    id("com.android.library") version "7.4.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.8.10" apply false
+    id(Dependency.GradlePlugins.ANDROID_APPLICATION) version Versions.ANDROID apply false
+    id(Dependency.GradlePlugins.ANDROID_LIBRARY) version Versions.ANDROID apply false
+    id(Dependency.GradlePlugins.KOTLIN_ANDROID) version Versions.ANDROID_KOTLIN apply false
+    id(Dependency.GradlePlugins.GRADLE_KTLINT) version Versions.GRADLE_KTLINT
 }
 
 tasks.register("clean", Delete::class) {

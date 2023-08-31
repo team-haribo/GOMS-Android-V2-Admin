@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace = "com.goms.data"
-    compileSdk = Versions.COMPILE_SDK_VERSION
+    compileSdk = 33
 
     defaultConfig {
-        minSdk = Versions.MIN_SDK_VERSION
-        targetSdk = Versions.TARGET_SDK_VERSION
+        minSdk = 26
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -38,19 +38,22 @@ android {
 dependencies {
     implementation(project(":domain"))
 
-    implementation(Dependency.JavaX.INJECT)
+    // retrofit
+    implementation(Dependency.Retrofit.RETROFIT_KT)
+    implementation(Dependency.Retrofit.RETROFIT_GSON_CONVERTER)
+    implementation(Dependency.Retrofit.OKHTTP)
+    implementation(Dependency.Retrofit.OKHTTP_LOGGING_INTERCEPTOR)
 
-    implementation(Dependency.AndroidX.ROOM_KTX)
-    kapt(Dependency.AndroidX.ROOM_COMPILER)
+    // hilt
+    implementation(Dependency.Hilt.HILT_ANDROID)
+    kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
 
-    implementation(Dependency.Libraries.RETROFIT)
-    implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
-    implementation(Dependency.Libraries.OKHTTP)
-    implementation(Dependency.Libraries.OKHTTP_LOGGING_INTERCEPTOR)
-
-    testImplementation(Dependency.UnitTest.JUNIT)
-    testImplementation(Dependency.UnitTest.MOCKITO_KOTLIN)
-
-    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    implementation(Dependency.AndroidX.CORE_KTX)
+    implementation(Dependency.AndroidX.APP_COMPAT)
+    implementation(Dependency.Compose.MATERIAL)
+    implementation(Dependency.Compose.MATERIAL3)
+    implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
+    testImplementation(Dependency.Test.JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.TEST_JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO)
 }
