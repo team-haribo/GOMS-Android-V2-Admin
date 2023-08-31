@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("dagger.hilt.android.plugin")
     id("kotlin-parcelize")
     kotlin("kapt")
 }
@@ -11,7 +10,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 26
         targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -36,19 +35,11 @@ android {
 }
 
 dependencies {
+    implementation(Dependency.JavaX.INJECT)
 
-    // hilt
-    implementation(Dependency.Hilt.HILT_ANDROID)
-    kapt(Dependency.Hilt.HILT_ANDROID_COMPILER)
+    implementation(Dependency.Kotlin.COROUTINES_CORE)
 
-    // retrofit
-    implementation(Dependency.Libraries.RETROFIT)
+    implementation(Dependency.AndroidX.PAGING)
 
-    implementation(Dependency.AndroidX.KOTLIN_CORE)
-    implementation(Dependency.AndroidX.APP_COMPAT)
-    implementation(Dependency.Google.MATERIAL)
-    implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
-    testImplementation(Dependency.UnitTest.JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    testImplementation(Dependency.Test.JUNIT)
 }

@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace = "com.goms.data"
-    compileSdk = Versions.COMPILE_SDK_VERSION
+    compileSdk = 33
 
     defaultConfig {
-        minSdk = Versions.MIN_SDK_VERSION
-        targetSdk = Versions.TARGET_SDK_VERSION
+        minSdk = 26
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -40,17 +40,17 @@ dependencies {
 
     implementation(Dependency.JavaX.INJECT)
 
-    implementation(Dependency.AndroidX.ROOM_KTX)
-    kapt(Dependency.AndroidX.ROOM_COMPILER)
+    implementation(Dependency.Room.ROOM)
+    kapt(Dependency.Room.ROOM_COMPILER)
 
-    implementation(Dependency.Libraries.RETROFIT)
-    implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
-    implementation(Dependency.Libraries.OKHTTP)
-    implementation(Dependency.Libraries.OKHTTP_LOGGING_INTERCEPTOR)
+    implementation(Dependency.Retrofit.RETROFIT_KT)
+    implementation(Dependency.Retrofit.RETROFIT_GSON_CONVERTER)
+    implementation(Dependency.Retrofit.OKHTTP)
+    implementation(Dependency.Retrofit.OKHTTP_LOGGING_INTERCEPTOR)
+    implementation(Dependency.Retrofit.SSE)
+    testImplementation(Dependency.Retrofit.SSE)
 
-    testImplementation(Dependency.UnitTest.JUNIT)
-    testImplementation(Dependency.UnitTest.MOCKITO_KOTLIN)
+    implementation(Dependency.AndroidX.PAGING)
 
-    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    testImplementation(Dependency.Test.JUNIT)
 }
