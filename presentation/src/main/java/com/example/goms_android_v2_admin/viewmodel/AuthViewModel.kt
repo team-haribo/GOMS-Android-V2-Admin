@@ -26,7 +26,7 @@ class AuthViewModel @Inject constructor(
     private val saveTheLoginDataUseCase: SaveTheLoginDataUseCase,
     private val deleteTokenUseCase: DeleteTokenUseCase,
     private val accessValidationUseCase: AccessValidationUseCase,
-) : ViewModel(){
+) : ViewModel() {
     private val _gAuthLoginRequest = MutableLiveData<Event<GAuthLoginResponseModel>>()
     val gAuthLoginRequest: LiveData<Event<GAuthLoginResponseModel>> get() = _gAuthLoginRequest
 
@@ -41,12 +41,13 @@ class AuthViewModel @Inject constructor(
             GAuthLoginRequestModel(code = code)
         ).onSuccess {
             it.catch { remoteError ->
-                _gAuthLoginRequest.value = remoteError.errorHandling(unknownAction = { saveTheLoginDataUseCase})
-            }.collect {response ->
+                _gAuthLoginRequest.value =
+                    remoteError.errorHandling(unknownAction = { saveTheLoginDataUseCase })
+            }.collect { response ->
                 _gAuthLoginRequest.value = Event.Success(data = response)
             }
         }.onFailure {
-            _gAuthLoginRequest.value = it.errorHandling(unknownAction = { saveTheLoginDataUseCase})
+            _gAuthLoginRequest.value = it.errorHandling(unknownAction = { saveTheLoginDataUseCase })
         }
     }
 
@@ -56,7 +57,7 @@ class AuthViewModel @Inject constructor(
         ).onSuccess {
             _saveTokenRequest.value = Event.Success()
         }.onFailure {
-            _saveTokenRequest.value = it.errorHandling(unknownAction = saveTheLoginDataUseCase)
+            _saveTokenRequest.value = it.errorHandling(unknownAction = { saveTheLoginDataUseCase })
         }
     }
 
