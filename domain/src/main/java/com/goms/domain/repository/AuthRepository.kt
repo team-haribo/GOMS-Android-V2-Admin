@@ -7,15 +7,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface AuthRepository {
     suspend fun gAuthLogin(body: GAuthLoginRequestModel): Flow<GAuthLoginResponseModel>
-
     suspend fun saveTheLoginData(data: GAuthLoginResponseModel)
-
     suspend fun accessValidation(): Flow<AccessValidationResponseModel>
-
-    suspend fun logout(): Flow<Unit>
-
-    suspend fun withdrawal(): Flow<Unit>
-
-    suspend fun deleteLoginData()
-
 }

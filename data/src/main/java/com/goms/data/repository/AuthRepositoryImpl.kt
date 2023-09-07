@@ -4,6 +4,7 @@ import com.goms.data.local.datasource.LocalAuthDataSource
 import com.goms.data.remote.datasource.application.RemoteAuthDataSource
 import com.goms.data.remote.dto.auth.request.GAuthLoginRequest
 import com.goms.data.remote.dto.auth.response.toLoginModel
+import com.goms.data.remote.dto.auth.response.toModel
 import com.goms.domain.model.auth.request.GAuthLoginRequestModel
 import com.goms.domain.model.auth.response.AccessValidationResponseModel
 import com.goms.domain.model.auth.response.GAuthLoginResponseModel
@@ -27,23 +28,13 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun saveTheLoginData(data: GAuthLoginResponseModel) {
         data.let {
             localDataSource.setAccessToken(it.accessToken)
+            localDataSource.setAccessTokenExpiredAt(it.accessTokenExp)
+            localDataSource.setRefreshToken(it.refreshToken)
+            localDataSource.setRefreshTokenExpiredAt(it.refreshTokenExp)
         }
     }
 
     override suspend fun accessValidation(): Flow<AccessValidationResponseModel> {
-        TODO("Not yet implemented")
+        return remoteDataSource.accessValidation().map { it.toModel() }
     }
-
-    override suspend fun logout(): Flow<Unit> {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun withdrawal(): Flow<Unit> {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun deleteLoginData() {
-        TODO("Not yet implemented")
-    }
-
 }
