@@ -35,6 +35,7 @@ class AuthViewModel @Inject constructor(
     val accessValidationResponse = _accessValidationResponse.asStateFlow()
 
     private val _saveTokenRequest = MutableLiveData<Event<Nothing>>()
+    val saveTokenRequest: LiveData<Event<Nothing>> get() = _saveTokenRequest
 
     fun gAuthLogin(code: String) = viewModelScope.launch {
         gAuthLoginUseCase(
