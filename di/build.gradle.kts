@@ -3,7 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     id("kotlin-android")
-    id("kotlin-kapt")
     kotlin("kapt")
 }
 

@@ -40,6 +40,8 @@ dependencies {
 
     implementation(Dependency.JavaX.INJECT)
 
+    implementation(Dependency.DataStore.PREFERENCES)
+
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 

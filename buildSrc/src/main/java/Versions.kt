@@ -7,13 +7,10 @@ object Versions {
         val JAVA_VERSION = JavaVersion.VERSION_17
         const val KOTLINX_COROUTINES = "1.6.0"
 
-        const val GITHUB_API = "8.1.0"
-        const val GITHUB_CORE = "8.1.0"
-
         const val BUILD_GRADLE = "4.2.1"
         const val COMPILE_SDK_VERSION = 33
         const val BUILD_TOOLS_VERSION = "32.0.0"
-        const val MIN_SDK_VERSION = 26
+        const val MIN_SDK_VERSION = 29
         const val TARGET_SDK_VERSION = 33
 
         const val CONSTRAINT_LAYOUT = "2.1.2"
@@ -50,6 +47,7 @@ object Versions {
 
         const val RETROFIT = "2.7.1"
         const val OKHTTP = "4.9.3"
+        const val GAUTH = "1.1.2"
 
         const val JUNIT = "4.13.2"
         const val ANDROID_JUNIT = "1.1.2"
@@ -65,11 +63,12 @@ object Versions {
 
         const val KTLINT = "2.1.2"
         const val KTLINT_PLUGIN = "11.1.0"
-
         const val COIL_VERSION = "2.1.0"
         const val GLIDE_VERSION = "1.4.7"
         const val SHIMMER = "0.5.0"
         const val LOTTIE_VERSION = "5.2.0"
 
         const val INJECT = "1"
+
+        const val PREFERENCES = "1.0.0"
 }

@@ -1,16 +1,16 @@
 package com.goms.data.utils
 
 import com.goms.domain.exception.BadRequestException
-import com.goms.domain.exception.ConflictException
+import com.goms.domain.exception.ConflictDataException
 import com.goms.domain.exception.ForBiddenException
+import com.goms.domain.exception.InvalidTokenException
 import com.goms.domain.exception.NeedLoginException
 import com.goms.domain.exception.NetworkException
 import com.goms.domain.exception.NotFoundException
-import com.goms.domain.exception.OtherHttpException
-import com.goms.domain.exception.ServerException
+import com.goms.domain.exception.ServerErrorException
 import com.goms.domain.exception.TimeOutException
-import com.goms.domain.exception.UnKnownException
-import com.goms.domain.exception.UnauthorizedException
+import com.goms.domain.exception.UnKnownHttpException
+import com.goms.domain.exception.UnknownException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -34,7 +34,7 @@ class GomsApiHandler<T> {
                 400 -> BadRequestException(
                     message = message
                 )
-                401 -> UnauthorizedException(
+                401 -> InvalidTokenException(
                     message = message
                 )
                 403 -> ForBiddenException(
@@ -43,15 +43,14 @@ class GomsApiHandler<T> {
                 404 -> NotFoundException(
                     message = message
                 )
-                409 -> ConflictException(
+                409 -> ConflictDataException(
                     message = message
                 )
-                500, 501, 502, 503 -> ServerException(
+                500, 501, 502, 503 -> ServerErrorException(
                     message = message
                 )
-                else -> OtherHttpException(
+                else -> UnKnownHttpException(
                     message = message,
-                    code = e.code()
                 )
             }
         } catch (e: SocketTimeoutException) {
@@ -59,9 +58,9 @@ class GomsApiHandler<T> {
         } catch (e: UnknownHostException) {
             throw NetworkException()
         } catch (e: NeedLoginException) {
-            throw NeedLoginException()
+            throw NeedLoginException(message = e.message)
         } catch (e: Exception) {
-            throw UnKnownException(message = e.message)
+            throw UnknownException(message = e.message)
         }
     }
 }

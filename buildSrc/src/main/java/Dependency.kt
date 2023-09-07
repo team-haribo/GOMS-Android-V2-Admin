@@ -51,10 +51,11 @@ object Dependency {
     }
 
     object Compose {
-        const val ACTIVITY = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY}"
-        const val UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+        const val ACTIVITY_COMPOSE = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY}"
+        const val COMPOSE = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+        const val COMPOSE_TOOLING = "androidx.compose.ui.ui-tooling:${Versions.COMPOSE}"
         const val VIEW_BINDING = "androidx.compose.ui:ui-viewbinding:${Versions.COMPOSE}"
-        const val PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+        const val COMPOSE_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
         const val MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE_MATERIAL}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
         const val COMPOSE_HILT_NAV = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAV}"
@@ -75,11 +76,6 @@ object Dependency {
         const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIVEDATA}"
     }
 
-    object GiuhubLogin {
-        const val GITHUB_API = "com.github.scribejava:scribejava-apis:${Versions.GITHUB_API}"
-        const val GITHUB_CORE = "com.github.scribejava:scribejava-core:${Versions.GITHUB_CORE}"
-    }
-
     object Libraries {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
         const val RETROFIT_CONVERTER_GSON =
@@ -94,8 +90,10 @@ object Dependency {
 
     object UnitTest {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
+        const val COMPOSE_JUNIT = "androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE}"
         const val MOCKITO_KOTLIN = "org.mockito.kotlin:mockito-kotlin:${Versions.MOCKITO_KOTLIN}"
         const val MOCKITO_INLINE = "org.mockito:mockito-inline:${Versions.MOCKITO_KOTLIN}"
+        const val COMPOSE_MANIFEST = "androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE}"
     }
 
 
@@ -132,4 +130,13 @@ object Dependency {
     object JavaX {
         const val INJECT = "javax.inject:javax.inject:${Versions.INJECT}"
     }
+
+    object GAuth {
+        const val GAUTH = "com.github.GSM-MSG:GAuth-Signin-Android:${Versions.GAUTH}"
+    }
+
+    object DataStore{
+        const val PREFERENCES = "androidx.datastore:datastore-preferences:${Versions.PREFERENCES}"
+    }
+
 }
