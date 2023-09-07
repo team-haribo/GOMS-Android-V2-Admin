@@ -42,12 +42,12 @@ class AuthViewModel @Inject constructor(
         ).onSuccess {
             it.catch { remoteError ->
                 _gAuthLoginRequest.value =
-                    remoteError.errorHandling(unknownAction = { saveTheLoginDataUseCase })
+                    remoteError.errorHandling(unknownAction = {})
             }.collect { response ->
                 _gAuthLoginRequest.value = Event.Success(data = response)
             }
         }.onFailure {
-            _gAuthLoginRequest.value = it.errorHandling(unknownAction = { saveTheLoginDataUseCase })
+            _gAuthLoginRequest.value = it.errorHandling(unknownAction = {})
         }
     }
 
@@ -57,7 +57,7 @@ class AuthViewModel @Inject constructor(
         ).onSuccess {
             _saveTokenRequest.value = Event.Success()
         }.onFailure {
-            _saveTokenRequest.value = it.errorHandling(unknownAction = { saveTheLoginDataUseCase })
+            _saveTokenRequest.value = it.errorHandling(unknownAction = {})
         }
     }
 
@@ -65,12 +65,12 @@ class AuthViewModel @Inject constructor(
         accessValidationUseCase()
             .onSuccess {
                 it.catch { remoteError ->
-                    _accessValidationResponse.value = remoteError.errorHandling()
+                    _accessValidationResponse.value = remoteError.errorHandling(unknownAction = {})
                 }.collect { response ->
                     _accessValidationResponse.value = Event.Success(data = response)
                 }
             }.onFailure { error ->
-                _accessValidationResponse.value = error.errorHandling()
+                _accessValidationResponse.value = error.errorHandling(unknownAction = {})
             }
     }
 
