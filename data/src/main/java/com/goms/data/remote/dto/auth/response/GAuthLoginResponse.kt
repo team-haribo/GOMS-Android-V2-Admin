@@ -8,7 +8,6 @@ data class GAuthLoginResponse(
     val accessTokenExp: String,
     val refreshTokenExp: String,
     val isExist: Boolean,
-    val role: String,
 )
 
 fun GAuthLoginResponse.toLoginModel() =
@@ -18,5 +17,4 @@ fun GAuthLoginResponse.toLoginModel() =
         accessTokenExp = this.accessTokenExp,
         refreshTokenExp = this.refreshTokenExp,
         isExist = this.isExist,
-        role = this.role
     )
