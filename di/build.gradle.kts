@@ -50,6 +50,8 @@ dependencies {
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 
+    implementation(Dependency.DataStore.PREFERENCES)
+
     implementation(Dependency.Libraries.RETROFIT)
     implementation(Dependency.Libraries.RETROFIT_CONVERTER_GSON)
     implementation(Dependency.Libraries.OKHTTP)

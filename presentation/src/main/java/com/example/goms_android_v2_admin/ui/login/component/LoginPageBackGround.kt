@@ -11,10 +11,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.goms_android_v2_admin.R
 
+@Preview
 @Composable
 fun LoginPageBackGround() {
     Column(modifier = Modifier.padding(all = 12.dp)) {

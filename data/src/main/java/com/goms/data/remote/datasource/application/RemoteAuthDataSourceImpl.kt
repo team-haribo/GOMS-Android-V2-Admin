@@ -1,8 +1,7 @@
 package com.goms.data.remote.datasource.application
 
-import com.goms.data.remote.datasource.network.api.AuthAPI
+import com.goms.data.remote.api.AuthAPI
 import com.goms.data.remote.dto.auth.request.GAuthLoginRequest
-import com.goms.data.remote.dto.auth.response.AccessValidationResponse
 import com.goms.data.remote.dto.auth.response.GAuthLoginResponse
 import com.goms.data.utils.GomsApiHandler
 import kotlinx.coroutines.Dispatchers
@@ -22,30 +21,8 @@ class RemoteAuthDataSourceImpl @Inject constructor(
         )
     }.flowOn(Dispatchers.IO)
 
-    override suspend fun accessValidation(): Flow<AccessValidationResponse> {
-        return flow {
-            emit(
-                GomsApiHandler<AccessValidationResponse>()
-                    .httpRequest { service.accessValidation() }
-                    .sendRequest()
-            )
-        }.flowOn(Dispatchers.IO)
+    override suspend fun refreshToken(refreshToken: String): Flow<GAuthLoginResponse> {
+        TODO("Not yet implemented")
     }
-
-    override suspend fun logout(): Flow<Unit> = flow {
-        emit(
-            GomsApiHandler<Unit>()
-                .httpRequest { service.logout() }
-                .sendRequest()
-        )
-    }.flowOn(Dispatchers.IO)
-
-    override suspend fun withdrawal(): Flow<Unit> = flow{
-        emit(
-            GomsApiHandler<Unit>()
-                .httpRequest { service.withdrawal() }
-                .sendRequest()
-        )
-    }.flowOn(Dispatchers.IO)
 
 }

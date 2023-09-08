@@ -25,11 +25,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Versions.JAVA_VERSION
+        targetCompatibility = Versions.JAVA_VERSION
     }
     kotlinOptions {
         jvmTarget = Versions.JAVA_VERSION.toString()
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE
     }
 }
 
@@ -39,7 +45,6 @@ dependencies {
     implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME)
     implementation(Dependency.Compose.ACTIVITY_COMPOSE)
     implementation(Dependency.Compose.COMPOSE)
-    implementation(Dependency.Compose.COMPOSE_TOOLING)
     implementation(Dependency.Compose.MATERIAL)
     implementation(Dependency.Compose.COMPOSE_PREVIEW)
     implementation(Dependency.Compose.MATERIAL3)
@@ -47,7 +52,6 @@ dependencies {
     androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
     androidTestImplementation(Dependency.UnitTest.COMPOSE_JUNIT)
-    debugImplementation(Dependency.Compose.COMPOSE_TOOLING)
     debugImplementation(Dependency.UnitTest.COMPOSE_MANIFEST)
     implementation(Dependency.Lottie.LOTTIE)
 

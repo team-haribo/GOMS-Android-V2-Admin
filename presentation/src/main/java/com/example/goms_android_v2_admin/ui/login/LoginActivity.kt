@@ -6,6 +6,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginActivity : BaseActivity(){
     override fun init() {
-        TODO("Not yet implemented")
+
     }
 }

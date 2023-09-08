@@ -9,10 +9,7 @@ import com.example.goms_android_v2_admin.utils.errorHandling
 import com.goms.domain.model.auth.request.GAuthLoginRequestModel
 import com.goms.domain.model.auth.response.AccessValidationResponseModel
 import com.goms.domain.model.auth.response.GAuthLoginResponseModel
-import com.goms.domain.usecase.auth.AccessValidationUseCase
-import com.goms.domain.usecase.auth.DeleteTokenUseCase
 import com.goms.domain.usecase.auth.GAuthLoginUseCase
-import com.goms.domain.usecase.auth.SaveTheLoginDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,9 +20,6 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthViewModel @Inject constructor(
     private val gAuthLoginUseCase: GAuthLoginUseCase,
-    private val saveTheLoginDataUseCase: SaveTheLoginDataUseCase,
-    private val deleteTokenUseCase: DeleteTokenUseCase,
-    private val accessValidationUseCase: AccessValidationUseCase,
 ) : ViewModel() {
     private val _gAuthLoginRequest = MutableLiveData<Event<GAuthLoginResponseModel>>()
     val gAuthLoginRequest: LiveData<Event<GAuthLoginResponseModel>> get() = _gAuthLoginRequest
@@ -50,32 +44,5 @@ class AuthViewModel @Inject constructor(
         }.onFailure {
             _gAuthLoginRequest.value = it.errorHandling(unknownAction = {})
         }
-    }
-
-    fun saveTheLoginData(data: GAuthLoginResponseModel) = viewModelScope.launch {
-        saveTheLoginDataUseCase(
-            data = data
-        ).onSuccess {
-            _saveTokenRequest.value = Event.Success()
-        }.onFailure {
-            _saveTokenRequest.value = it.errorHandling(unknownAction = {})
-        }
-    }
-
-    fun accessValidation() = viewModelScope.launch {
-        accessValidationUseCase()
-            .onSuccess {
-                it.catch { remoteError ->
-                    _accessValidationResponse.value = remoteError.errorHandling(unknownAction = {})
-                }.collect { response ->
-                    _accessValidationResponse.value = Event.Success(data = response)
-                }
-            }.onFailure { error ->
-                _accessValidationResponse.value = error.errorHandling(unknownAction = {})
-            }
-    }
-
-    fun deleteToken() = viewModelScope.launch {
-        deleteTokenUseCase()
     }
 }

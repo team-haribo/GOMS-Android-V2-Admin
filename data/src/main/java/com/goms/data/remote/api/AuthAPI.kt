@@ -7,7 +7,7 @@ import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 
-interface AuthApi {
+interface AuthAPI {
 
     @POST("/api/v2/auth/signin")
     suspend fun gAuthLogin(

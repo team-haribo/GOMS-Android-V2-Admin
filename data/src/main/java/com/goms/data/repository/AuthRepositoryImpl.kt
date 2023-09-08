@@ -4,7 +4,6 @@ import com.goms.data.local.datasource.LocalAuthDataSource
 import com.goms.data.remote.datasource.application.RemoteAuthDataSource
 import com.goms.data.remote.dto.auth.request.GAuthLoginRequest
 import com.goms.data.remote.dto.auth.response.toLoginModel
-import com.goms.data.remote.dto.auth.response.toModel
 import com.goms.domain.model.auth.request.GAuthLoginRequestModel
 import com.goms.domain.model.auth.response.AccessValidationResponseModel
 import com.goms.domain.model.auth.response.GAuthLoginResponseModel
@@ -32,9 +31,5 @@ class AuthRepositoryImpl @Inject constructor(
             localDataSource.setRefreshToken(it.refreshToken)
             localDataSource.setRefreshTokenExpiredAt(it.refreshTokenExp)
         }
-    }
-
-    override suspend fun accessValidation(): Flow<AccessValidationResponseModel> {
-        return remoteDataSource.accessValidation().map { it.toModel() }
     }
 }

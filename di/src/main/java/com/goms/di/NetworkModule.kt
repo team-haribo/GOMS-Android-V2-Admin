@@ -1,6 +1,7 @@
 package com.goms.di
 
 import android.util.Log
+import com.goms.data.remote.api.AuthAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,6 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -47,5 +49,11 @@ object NetworkModule {
     @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAuthService(retrofit: Retrofit): AuthAPI {
+        return retrofit.create(AuthAPI::class.java)
     }
 }
