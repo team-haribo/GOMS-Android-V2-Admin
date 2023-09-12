@@ -28,9 +28,9 @@ import com.example.goms_android_v2_admin.R
 import com.example.goms_android_v2_admin.ui.component.GOMSButton
 import com.example.goms_android_v2_admin.ui.component.TopBar
 import com.example.goms_android_v2_admin.ui.main.component.GOMSCard
+import com.example.goms_android_v2_admin.ui.main.component.NavigateCard
 import com.example.goms_android_v2_admin.ui.theme.Background
 import com.example.goms_android_v2_admin.ui.theme.GOMSTypography
-import com.example.goms_android_v2_admin.ui.theme.IcBackArrow
 import com.example.goms_android_v2_admin.ui.theme.IcMain
 import com.example.goms_android_v2_admin.ui.theme.Primary
 import com.example.goms_android_v2_admin.ui.theme.n1
@@ -59,51 +59,33 @@ fun MainScreen(
             Column {
                 Text(
                     text = "간편하게\n수요외출제를\n관리해 보세요!",
-                    style =  GOMSTypography.h1
+                    style = GOMSTypography.h1
                 )
                 Spacer(modifier = Modifier.height(22.dp))
                 GOMSButton(
                     text = "QR 생성하기",
                     color = Primary,
                     textStyle = GOMSTypography.h3,
-                    paddingValues = PaddingValues(horizontal = 33.dp, vertical = 0.dp) // remove button default vertical padding
+                    paddingValues = PaddingValues(
+                        horizontal = 33.dp,
+                        vertical = 0.dp
+                    ) // remove button default vertical padding
                 ) {}
             }
             IcMain(modifier = Modifier.align(Alignment.TopEnd))
         }
         Spacer(modifier = Modifier.weight(1f))
-        GOMSCard {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        horizontal = 16.dp,
-                        vertical = 14.dp
-                    ),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column {
-                    Text(
-                        text = "현재 183명의 학생 중에서",
-                        style = GOMSTypography.body3,
-                        color = n1
-                    )
-                    Text(
-                        text = buildAnnotatedString {
-                            withStyle(
-                                style = SpanStyle(color = Primary)
-                            ) {
-                                append(outingCount.toString())
-                            }
-                            append(" 명이 외출중이에요!")
-                        },
-                        style = GOMSTypography.body1
-                    )
+        NavigateCard(
+            title = "현재 183명의 학생 중에서",
+            content2 = buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(color = Primary)
+                ) {
+                    append(outingCount.toString())
                 }
-                IcBackArrow()
+                append(" 명이 외출중이에요!")
             }
-        }
+        )
         Spacer(modifier = Modifier.weight(1f))
         Text(
             text = "지각의 전당",
@@ -152,31 +134,10 @@ fun MainScreen(
             }
         }
         Spacer(modifier = Modifier.weight(1f))
-        GOMSCard {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        horizontal = 16.dp,
-                        vertical = 14.dp
-                    ),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column {
-                    Text(
-                        text = "모든 학생들의 역할을 관리해보세요!",
-                        style = GOMSTypography.body3,
-                        color = n1
-                    )
-                    Text(
-                        text = "학생 관리하기",
-                        style = GOMSTypography.body1,
-                    )
-                }
-                IcBackArrow()
-            }
-        }
+        NavigateCard(
+            title = "모든 학생들의 역할을 관리해보세요!",
+            content = "학생 관리하기"
+        )
         Spacer(modifier = Modifier.weight(1f))
     }
 }
