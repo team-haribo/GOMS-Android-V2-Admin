@@ -55,8 +55,8 @@ fun MainScreen(
     ) {
         TopBar(modifier = Modifier.padding(top = 10.dp))
         Spacer(modifier = Modifier.weight(1f))
-        Box(modifier = Modifier.fillMaxWidth()) {
-            Column {
+        Row(modifier = Modifier.fillMaxWidth()) {
+            Column{
                 Text(
                     text = "간편하게\n수요외출제를\n관리해 보세요!",
                     style = GOMSTypography.h1
@@ -72,7 +72,8 @@ fun MainScreen(
                     ) // remove button default vertical padding
                 ) {}
             }
-            IcMain(modifier = Modifier.align(Alignment.TopEnd))
+            Spacer(modifier = Modifier.weight(1f))
+            IcMain(modifier = Modifier.padding(end = 20.dp))
         }
         Spacer(modifier = Modifier.weight(1f))
         NavigateCard(
