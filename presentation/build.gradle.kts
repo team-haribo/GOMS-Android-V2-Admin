@@ -120,4 +120,7 @@ dependencies {
 
     implementation(platform(Dependency.Google.FIREBASE_BOM))
     implementation(Dependency.Google.FIREBASE_ANALYTICS)
+
+    implementation(Dependency.Coil.COIL_COMPOSE)
+    implementation(Dependency.Coil.COIL_VIEW)
 }
